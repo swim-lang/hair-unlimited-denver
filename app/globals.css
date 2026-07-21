@@ -318,6 +318,36 @@ ol {
 
 .feeling {
   height: 760px;
+  overflow: hidden;
+  position: relative;
+}
+
+.feeling-video {
+  filter: grayscale(1) contrast(1.1);
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.42;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+.feeling-scrim {
+  background-color: rgba(9, 9, 9, 0.7);
+  background-image: repeating-linear-gradient(104deg, rgba(255,255,255,0.016) 0, rgba(255,255,255,0.016) 1px, transparent 1px, transparent 9px);
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.feeling > .section-kicker,
+.feeling > .feeling-grid {
+  position: relative;
+  z-index: 2;
 }
 
 .section-kicker {
@@ -1363,5 +1393,9 @@ ol {
   .reveal-ready [data-reveal] {
     opacity: 1;
     transform: none;
+  }
+
+  .feeling-video {
+    display: none;
   }
 }

@@ -54,7 +54,6 @@ export default function Home() {
           <div className="hero-bottom">
             <div className="hero-intro">
               <p>Custom non-surgical hair systems, precisely matched and fitted in a private Denver studio.</p>
-              <small>One-to-one care · Natural results · No pressure</small>
             </div>
             <div className="hero-actions">
               <BookingLink />
@@ -74,6 +73,10 @@ export default function Home() {
       </section>
 
       <section className="feeling dark-section">
+        <video className="feeling-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+          <source src="/videos/pexels-gustavo-fring-5450152.mp4" type="video/mp4" />
+        </video>
+        <div className="feeling-scrim" aria-hidden="true" />
         <div className="section-kicker section-kicker-dark">
           <span>The feeling</span>
           <span>If you&apos;re here, you&apos;ve probably tried to ignore it.</span>
