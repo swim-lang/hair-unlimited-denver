@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SiteFooter from "../site-footer";
 import SiteHeader from "../site-header";
+import { sitePath } from "../site-path";
 
 const faqs = [
   {
@@ -91,7 +92,7 @@ export default function FAQPage() {
           <span>Ready for a real answer?</span>
           <h2 className="display">Talk it through privately.</h2>
         </div>
-        <a className="button button-dark" href="/book">
+        <a className="button button-dark" href={sitePath("/book")}>
           <span>Book a private consult</span>
           <span aria-hidden="true">↗</span>
         </a>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { sitePath } from "./site-path";
 
 const phoneDisplay = "(303) 868-1977";
 const phoneHref = "tel:+13038681977";
@@ -11,7 +12,6 @@ const menuLinks = [
   { label: "Hair systems", href: "/#hair-systems" },
   { label: "Transformations", href: "/results" },
   { label: "How it works", href: "/#process" },
-  { label: "The studio", href: "/#studio" },
   { label: "Questions", href: "/faq" },
 ];
 
@@ -86,7 +86,7 @@ export default function SiteMenu() {
 
             <nav className="site-menu-nav" aria-label="Menu navigation">
               {menuLinks.map((link, index) => (
-                <a href={link.href} onClick={closeMenu} key={link.label}>
+                <a href={sitePath(link.href)} onClick={closeMenu} key={link.label}>
                   <small>{String(index + 1).padStart(2, "0")}</small>
                   <span>{link.label}</span>
                   <b aria-hidden="true">↗</b>
@@ -95,7 +95,7 @@ export default function SiteMenu() {
             </nav>
 
             <div className="site-menu-actions">
-              <a className="site-menu-primary" href="/book" onClick={closeMenu}>
+              <a className="site-menu-primary" href={sitePath("/book")} onClick={closeMenu}>
                 <span>Book a private consult</span><b aria-hidden="true">↗</b>
               </a>
               <div>
@@ -106,7 +106,7 @@ export default function SiteMenu() {
 
             <div className="site-menu-bottom">
               <span>7535 E. Hampden Ave. · Building 2, Suite 502</span>
-              <a href="/clients">Current clients →</a>
+              <a href={sitePath("/clients")}>Current clients →</a>
             </div>
           </aside>
         </div>

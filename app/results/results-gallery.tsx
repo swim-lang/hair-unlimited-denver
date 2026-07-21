@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { sitePath } from "../site-path";
 import { transformations } from "./transformations";
 
 export default function ResultsGallery() {
@@ -82,7 +83,7 @@ export default function ResultsGallery() {
           <span>See yourself differently.</span>
           <h2 className="display">Start privately.</h2>
         </div>
-        <a className="button button-dark" href="/book">
+        <a className="button button-dark" href={sitePath("/book")}>
           <span>Book a private consult</span>
           <span aria-hidden="true">↗</span>
         </a>

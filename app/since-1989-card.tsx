@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { sitePath } from "./site-path";
 
 const startYear = 2025;
 const endYear = 1989;
@@ -48,7 +49,7 @@ export default function Since1989Card() {
 
   return (
     <aside className="since-card" ref={cardRef} tabIndex={0}>
-      <img className="since-card-gif" src="/images/rock-band-1989-hover.gif" alt="" aria-hidden="true" />
+      <img className="since-card-gif" src={sitePath("/images/rock-band-1989-hover.gif")} alt="" aria-hidden="true" />
       <small>Experience / continuity</small>
       <div className="since-card-year">
         <strong>Serving Denver</strong>

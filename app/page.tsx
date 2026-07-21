@@ -3,6 +3,7 @@ import HomeLoader from "./home-loader";
 import Since1989Card from "./since-1989-card";
 import SiteFooter from "./site-footer";
 import SiteHeader from "./site-header";
+import { sitePath } from "./site-path";
 import { transformations } from "./results/transformations";
 
 const phoneDisplay = "(303) 868-1977";
@@ -16,7 +17,7 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function BookingLink({ className = "button button-dark" }: { className?: string }) {
   return (
-    <a className={className} href="/book">
+    <a className={className} href={sitePath("/book")}>
       <span>Book a private consult</span>
       <Arrow diagonal />
     </a>
@@ -59,15 +60,15 @@ export default function Home() {
         </div>
 
         <figure className="hero-result">
-          <div className="hero-photo hero-before" role="img" aria-label="Client before a custom hair system" />
-          <div className="hero-photo hero-after" role="img" aria-label="Client after a custom hair system" />
+          <div className="hero-photo hero-before" style={{ backgroundImage: `url("${sitePath("/images/andrew-before.jpg")}")` }} role="img" aria-label="Client before a custom hair system" />
+          <div className="hero-photo hero-after" style={{ backgroundImage: `url("${sitePath("/images/andrew-after.jpg")}")` }} role="img" aria-label="Client after a custom hair system" />
           <figcaption>Real client · Custom system</figcaption>
         </figure>
       </section>
 
       <section className="feeling dark-section">
         <video className="feeling-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-          <source src="/videos/pexels-gustavo-fring-5450152.mp4" type="video/mp4" />
+          <source src={sitePath("/videos/pexels-gustavo-fring-5450152.mp4")} type="video/mp4" />
         </video>
         <div className="feeling-scrim" aria-hidden="true" />
         <div className="section-kicker section-kicker-dark">
@@ -123,7 +124,7 @@ export default function Home() {
           <h2 className="display results-title">The work<br />speaks for itself.</h2>
           <div>
             <p>Natural hairlines. Precise color. Styles chosen for the person, not the category.</p>
-            <a className="button button-dark" href="/results">
+            <a className="button button-dark" href={sitePath("/results")}>
               <span>View transformations</span>
               <Arrow />
             </a>
@@ -183,7 +184,7 @@ export default function Home() {
         <div className="studio-main" data-reveal>
           <h2 className="display studio-title">Private<br />by default.</h2>
           <figure className="studio-photo">
-            <img src="/images/studio-stylist.jpg" alt="Stylist finishing a client's hair in a private studio" />
+            <img src={sitePath("/images/studio-stylist.jpg")} alt="Stylist finishing a client's hair in a private studio" />
           </figure>
           <div className="studio-copy">
             <p>No crowded clinic. No rotating cast. Start with a private, no-pressure consultation and stay with people who know your hair.</p>
@@ -196,7 +197,7 @@ export default function Home() {
         <div className="studio-details" data-reveal>
           <div><small>Visit / Hampden</small><address>7535 E. Hampden Ave.<br />Building 2, Suite 502</address></div>
           <div><small>Call / text</small><a href={phoneHref}>{phoneDisplay}</a></div>
-          <div><a className="button button-dark" href={directionsHref} target="_blank" rel="noreferrer"><span>Meet the studio</span><Arrow /></a></div>
+          <div><a className="button button-dark" href={directionsHref} target="_blank" rel="noreferrer"><span>Get directions</span><Arrow /></a></div>
         </div>
       </section>
 

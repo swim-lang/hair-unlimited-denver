@@ -1,3 +1,5 @@
+import { sitePath } from "./site-path";
+
 const phoneDisplay = "(303) 868-1977";
 const phoneHref = "tel:+13038681977";
 const directionsHref =
@@ -14,15 +16,15 @@ export default function SiteFooter() {
         <nav aria-label="Footer navigation">
           <div>
             <small>Explore</small>
-            <a href="/#hair-systems">Hair Systems</a>
-            <a href="/results">Results</a>
-            <a href="/#studio">The Studio</a>
-            <a href="/faq">Questions</a>
+            <a href={sitePath("/#hair-systems")}>Hair Systems</a>
+            <a href={sitePath("/results")}>Results</a>
+            <a href={sitePath("/#process")}>How It Works</a>
+            <a href={sitePath("/faq")}>Questions</a>
           </div>
           <div>
             <small>Start here</small>
-            <a href="/book">Book a Private Consult</a>
-            <a href="/clients">Current Clients</a>
+            <a href={sitePath("/book")}>Book a Private Consult</a>
+            <a href={sitePath("/clients")}>Current Clients</a>
             <a href={phoneHref}>Call / Text</a>
             <a href={directionsHref} target="_blank" rel="noreferrer">Get Directions</a>
           </div>

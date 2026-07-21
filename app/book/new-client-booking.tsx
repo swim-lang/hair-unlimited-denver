@@ -2,6 +2,7 @@
 
 import type { FormEvent } from "react";
 import { useMemo, useState } from "react";
+import { sitePath } from "../site-path";
 
 const phoneDisplay = "(303) 868-1977";
 const phoneHref = "tel:+13038681977";
@@ -260,7 +261,7 @@ export default function NewClientBooking() {
                 <button className="portal-primary" type="button" onClick={resetBooking}>
                   Start the demo again <span aria-hidden="true">→</span>
                 </button>
-                <a className="portal-secondary" href="/">Return to the website</a>
+                <a className="portal-secondary" href={sitePath("/")}>Return to the website</a>
               </div>
             )}
           </section>

@@ -597,14 +597,6 @@ ol {
   flex: 0 0 50%;
 }
 
-.hero-before {
-  background-image: url("/images/andrew-before.jpg");
-}
-
-.hero-after {
-  background-image: url("/images/andrew-after.jpg");
-}
-
 .hero-result figcaption {
   background: var(--ink);
   color: var(--paper);
