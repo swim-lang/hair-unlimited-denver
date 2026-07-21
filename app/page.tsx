@@ -23,8 +23,9 @@ export default function Home() {
     <main>
       <RevealOnScroll />
       <header className="site-header">
-        <a className="header-mark" href="#top" aria-label="Hair Unlimited home">
-          Hair Unlimited
+        <a className="header-lockup" href="#top" aria-label="Hair Unlimited home">
+          <img className="header-monogram" src="/hu-lettermark-gothic-final.svg" alt="" aria-hidden="true" />
+          <span className="header-mark">Hair Unlimited</span>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <a href="#hair-systems">Hair systems</a>

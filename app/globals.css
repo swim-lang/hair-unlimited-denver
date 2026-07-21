@@ -71,6 +71,19 @@ ol {
   padding: 0 56px;
 }
 
+.header-lockup {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.header-monogram {
+  display: block;
+  flex: 0 0 44px;
+  height: 44px;
+  width: 44px;
+}
+
 .header-mark {
   background: var(--ink);
   color: var(--paper);
@@ -998,6 +1011,16 @@ ol {
     font-size: 19px;
     line-height: 20px;
     padding: 9px 10px;
+  }
+
+  .header-lockup {
+    gap: 6px;
+  }
+
+  .header-monogram {
+    flex-basis: 38px;
+    height: 38px;
+    width: 38px;
   }
 
   .desktop-nav {
