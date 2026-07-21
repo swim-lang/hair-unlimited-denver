@@ -8,10 +8,10 @@ const directionsHref =
   "https://www.google.com/maps/search/?api=1&query=7535+E+Hampden+Ave+Building+2+Suite+502+Denver+CO+80231";
 
 const menuLinks = [
-  { label: "Hair systems", href: "#hair-systems" },
+  { label: "Hair systems", href: "/#hair-systems" },
   { label: "Transformations", href: "/results" },
-  { label: "How it works", href: "#process" },
-  { label: "The studio", href: "#studio" },
+  { label: "How it works", href: "/#process" },
+  { label: "The studio", href: "/#studio" },
   { label: "Questions", href: "/faq" },
 ];
 

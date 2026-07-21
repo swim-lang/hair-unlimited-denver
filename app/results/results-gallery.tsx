@@ -45,14 +45,6 @@ export default function ResultsGallery() {
 
   return (
     <main className="portfolio-page">
-      <header className="client-header portfolio-header">
-        <a className="header-lockup" href="/" aria-label="Return to Hair Unlimited home">
-          <img className="header-monogram" src="/hu-lettermark-gothic-final.svg" alt="" aria-hidden="true" />
-          <span className="header-mark">Hair Unlimited</span>
-        </a>
-        <a className="header-book" href="/book">Book a private consult</a>
-      </header>
-
       <section className="portfolio-hero">
         <div className="portfolio-eyebrow">
           <span>Real clients</span>

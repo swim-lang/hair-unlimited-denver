@@ -102,17 +102,6 @@ export default function NewClientBooking() {
 
   return (
     <main className="client-portal new-client-portal">
-      <header className="client-header">
-        <a className="header-lockup" href="/" aria-label="Return to Hair Unlimited home">
-          <img className="header-monogram" src="/hu-lettermark-gothic-final.svg" alt="" aria-hidden="true" />
-          <span className="header-mark">Hair Unlimited</span>
-        </a>
-        <a className="client-support" href={phoneHref}>
-          <span>Prefer to talk?</span>
-          <strong>{phoneDisplay}</strong>
-        </a>
-      </header>
-
       <div className="client-main">
         <section className="client-intro">
           <div className="portal-eyebrow">

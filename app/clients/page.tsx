@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import SiteFooter from "../site-footer";
+import SiteHeader from "../site-header";
 import ClientBooking from "./client-booking";
 
 export const metadata: Metadata = {
@@ -7,5 +9,11 @@ export const metadata: Metadata = {
 };
 
 export default function ClientsPage() {
-  return <ClientBooking />;
+  return (
+    <>
+      <SiteHeader />
+      <ClientBooking />
+      <SiteFooter />
+    </>
+  );
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-
-const phoneDisplay = "(303) 868-1977";
-const phoneHref = "tel:+13038681977";
+import SiteFooter from "../site-footer";
+import SiteHeader from "../site-header";
 
 const faqs = [
   {
@@ -53,19 +52,10 @@ export const metadata: Metadata = {
 
 export default function FAQPage() {
   return (
-    <main className="faq-page">
-      <header className="client-header">
-        <a className="header-lockup" href="/" aria-label="Return to Hair Unlimited home">
-          <img className="header-monogram" src="/hu-lettermark-gothic-final.svg" alt="" aria-hidden="true" />
-          <span className="header-mark">Hair Unlimited</span>
-        </a>
-        <a className="client-support" href={phoneHref}>
-          <span>Still have a question?</span>
-          <strong>{phoneDisplay}</strong>
-        </a>
-      </header>
-
-      <section className="faq-hero">
+    <>
+      <SiteHeader />
+      <main className="faq-page">
+        <section className="faq-hero">
         <div className="faq-hero-title">
           <span>Questions / straight answers</span>
           <h1 className="display">Ask<br />anything.</h1>
@@ -75,9 +65,9 @@ export default function FAQPage() {
           <p>Hair loss is personal. The answers should be clear. Start here, then bring every other question to a private consultation.</p>
           <small>Draft content for studio review</small>
         </div>
-      </section>
+        </section>
 
-      <section className="faq-content">
+        <section className="faq-content">
         <div className="faq-content-intro">
           <span>Good to know</span>
           <h2>Before you book.</h2>
@@ -94,9 +84,9 @@ export default function FAQPage() {
             </details>
           ))}
         </div>
-      </section>
+        </section>
 
-      <section className="faq-cta">
+        <section className="faq-cta">
         <div>
           <span>Ready for a real answer?</span>
           <h2 className="display">Talk it through privately.</h2>
@@ -105,7 +95,9 @@ export default function FAQPage() {
           <span>Book a private consult</span>
           <span aria-hidden="true">↗</span>
         </a>
-      </section>
-    </main>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
   );
 }

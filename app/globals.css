@@ -174,9 +174,10 @@ ol {
   align-items: center;
   background: var(--paper);
   border-bottom: 1px solid var(--ink);
-  display: flex;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(238px, auto) minmax(0, 1fr) minmax(238px, auto);
   height: 88px;
-  justify-content: space-between;
   padding: 0 56px;
 }
 
@@ -207,7 +208,8 @@ ol {
 .desktop-nav {
   align-items: center;
   display: flex;
-  gap: 34px;
+  gap: clamp(20px, 2.3vw, 38px);
+  justify-content: center;
 }
 
 .desktop-nav a,
@@ -257,6 +259,7 @@ ol {
   align-items: center;
   display: flex;
   gap: 10px;
+  justify-content: flex-end;
 }
 
 .site-menu-toggle {
@@ -265,7 +268,7 @@ ol {
   border: 1px solid var(--ink);
   color: var(--ink);
   cursor: pointer;
-  display: flex;
+  display: none;
   font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 700;
@@ -2343,10 +2346,6 @@ ol {
 }
 
 @media (max-width: 820px) {
-  .portfolio-header .header-book {
-    display: flex;
-  }
-
   .portfolio-hero {
     min-height: 600px;
     padding: 34px 20px 44px;
@@ -2615,8 +2614,17 @@ ol {
     padding-right: 32px;
   }
 
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .desktop-nav {
-    gap: 18px;
+    display: none;
+  }
+
+  .site-menu-toggle {
+    display: flex;
   }
 
   .hero {

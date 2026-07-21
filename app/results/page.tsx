@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import SiteFooter from "../site-footer";
+import SiteHeader from "../site-header";
 import ResultsGallery from "./results-gallery";
 
 export const metadata: Metadata = {
@@ -7,5 +9,11 @@ export const metadata: Metadata = {
 };
 
 export default function ResultsPage() {
-  return <ResultsGallery />;
+  return (
+    <>
+      <SiteHeader />
+      <ResultsGallery />
+      <SiteFooter />
+    </>
+  );
 }
