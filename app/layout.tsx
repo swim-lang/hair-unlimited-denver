@@ -15,6 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title,
     description,
+    icons: {
+      icon: [{ url: "/hu-lettermark-gothic-final.svg", type: "image/svg+xml" }],
+      shortcut: "/hu-lettermark-gothic-final.svg",
+    },
     openGraph: {
       title,
       description,

@@ -30,6 +30,9 @@ test("server-renders the Hair Unlimited homepage and booking links", async () =>
   const html = await response.text();
   assert.match(html, /<title>Hair Unlimited of Denver/);
   assert.match(html, /Look like/);
+  assert.match(html, /rel="icon"/);
+  assert.match(html, /hu-lettermark-gothic-final\.svg/);
+  assert.match(html, /class="home-loader"/);
   assert.match(html, /href="\/book"/);
   assert.match(html, /href="\/clients"/);
 });

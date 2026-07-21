@@ -1,4 +1,5 @@
 import RevealOnScroll from "./reveal-on-scroll";
+import HomeLoader from "./home-loader";
 
 const phoneDisplay = "(303) 868-1977";
 const phoneHref = "tel:+13038681977";
@@ -21,6 +22,7 @@ function BookingLink({ className = "button button-dark" }: { className?: string 
 export default function Home() {
   return (
     <main>
+      <HomeLoader />
       <RevealOnScroll />
       <header className="site-header">
         <a className="header-lockup" href="#top" aria-label="Hair Unlimited home">
