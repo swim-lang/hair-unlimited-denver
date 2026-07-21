@@ -1,5 +1,6 @@
 import RevealOnScroll from "./reveal-on-scroll";
 import HomeLoader from "./home-loader";
+import Since1989Card from "./since-1989-card";
 
 const phoneDisplay = "(303) 868-1977";
 const phoneHref = "tel:+13038681977";
@@ -109,14 +110,7 @@ export default function Home() {
             <h2 className="display approach-title">Custom hair.<br />Precise fit.</h2>
             <p className="approach-copy">Your hairline, color, texture, density, cut and routine are considered together. The result should feel like you, not a product.</p>
           </div>
-          <aside className="since-card">
-            <small>Experience / continuity</small>
-            <div>
-              <strong>Serving Denver</strong>
-              <span>Since<br />1989.</span>
-            </div>
-            <p>One studio. Long relationships. A stylist who knows your history.</p>
-          </aside>
+          <Since1989Card />
         </div>
         <div className="benefits">
           <article data-reveal>
@@ -246,7 +240,7 @@ export default function Home() {
               <a href="#hair-systems">Hair Systems</a>
               <a href="#results">Results</a>
               <a href="#studio">The Studio</a>
-              <a href="#process">Questions</a>
+              <a href="/faq">Questions</a>
             </div>
             <div>
               <small>Start here</small>

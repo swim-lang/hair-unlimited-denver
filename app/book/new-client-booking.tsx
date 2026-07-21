@@ -5,6 +5,8 @@ import { useMemo, useState } from "react";
 
 const phoneDisplay = "(303) 868-1977";
 const phoneHref = "tel:+13038681977";
+const consultationHost = "Studio manager";
+const consultationTimes = ["9:30 AM", "11:00 AM", "1:30 PM", "3:00 PM", "4:30 PM"];
 
 const needs = [
   {
@@ -24,33 +26,12 @@ const needs = [
   },
 ] as const;
 
-const stylists = [
-  {
-    id: "stylist-a",
-    name: "Stylist A",
-    specialties: "Custom systems · Hairline design · First consultations",
-    times: ["9:30 AM", "11:00 AM", "1:30 PM", "3:00 PM"],
-  },
-  {
-    id: "stylist-b",
-    name: "Stylist B",
-    specialties: "Color matching · Cut and blend · First consultations",
-    times: ["10:00 AM", "12:30 PM", "2:00 PM", "4:30 PM"],
-  },
-  {
-    id: "first-available",
-    name: "First available",
-    specialties: "Show the soonest openings across the studio",
-    times: ["9:30 AM", "10:30 AM", "1:00 PM", "2:30 PM", "4:00 PM"],
-  },
-] as const;
-
 const consultationTypes = [
-  { id: "studio-consult", name: "Private studio consultation", duration: "45 min" },
+  { id: "studio-consult", name: "Private studio consultation", duration: "60 min" },
   { id: "phone-intro", name: "Phone introduction", duration: "15 min" },
 ] as const;
 
-type Step = 1 | 2 | 3 | 4 | 5;
+type Step = 1 | 2 | 3 | 4;
 
 function getUpcomingDates() {
   const dates: Array<{ id: string; day: string; date: string; full: string }> = [];
@@ -81,7 +62,6 @@ export default function NewClientBooking() {
   const dates = useMemo(getUpcomingDates, []);
   const [step, setStep] = useState<Step>(1);
   const [needId, setNeedId] = useState("");
-  const [stylistId, setStylistId] = useState("");
   const [consultationId, setConsultationId] = useState("");
   const [dateId, setDateId] = useState("");
   const [time, setTime] = useState("");
@@ -91,32 +71,25 @@ export default function NewClientBooking() {
   const [notes, setNotes] = useState("");
 
   const need = needs.find((item) => item.id === needId);
-  const stylist = stylists.find((item) => item.id === stylistId);
   const consultation = consultationTypes.find((item) => item.id === consultationId);
   const selectedDate = dates.find((item) => item.id === dateId);
-  const canContinue = Boolean(stylist && consultation && selectedDate && time);
+  const canContinue = Boolean(need && consultation && selectedDate && time);
 
   const chooseNeed = (id: string) => {
     setNeedId(id);
-    setStep(2);
-  };
-
-  const chooseStylist = (id: string) => {
-    setStylistId(id);
     setConsultationId("");
     setDateId("");
     setTime("");
-    setStep(3);
+    setStep(2);
   };
 
   const submitBooking = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (name.trim() && mobile.trim() && email.trim()) setStep(5);
+    if (name.trim() && mobile.trim() && email.trim()) setStep(4);
   };
 
   const resetBooking = () => {
     setNeedId("");
-    setStylistId("");
     setConsultationId("");
     setDateId("");
     setTime("");
@@ -147,17 +120,16 @@ export default function NewClientBooking() {
             <span>Interactive demo</span>
           </div>
           <h1 className="display client-title new-client-title">Start with a<br />private consult.</h1>
-          <p>Tell us what is changing, choose who you would like to meet and reserve a private first appointment without a phone call.</p>
+          <p>Tell us what is changing and reserve a private first appointment with the studio manager without a phone call.</p>
         </section>
 
         <div className="booking-layout new-booking-layout">
           <section className="booking-card new-booking-card" aria-live="polite">
-            <div className="booking-progress booking-progress-four" aria-label="Booking progress">
+            <div className="booking-progress" aria-label="Booking progress">
               {([
                 { number: 1, label: "Your needs" },
-                { number: 2, label: "Stylist" },
-                { number: 3, label: "Date and time" },
-                { number: 4, label: "Details" },
+                { number: 2, label: "Date and time" },
+                { number: 3, label: "Details" },
               ] as const).map(({ number, label }) => (
                 <div className={step === number ? "is-current" : step > number ? "is-complete" : ""} key={label}>
                   <span>0{number}</span>
@@ -187,28 +159,9 @@ export default function NewClientBooking() {
             {step === 2 && need && (
               <div className="booking-step">
                 <button className="text-back" type="button" onClick={() => setStep(1)}>← Change answer</button>
-                <span className="step-kicker">Step 02 · {need.name}</span>
-                <h2>Who would you like to meet?</h2>
-                <p className="step-lead">Choose a stylist, or let the studio show you the soonest available appointment.</p>
-                <div className="stylist-grid choice-grid-three">
-                  {stylists.map((item, index) => (
-                    <button className="stylist-choice" type="button" onClick={() => chooseStylist(item.id)} key={item.id}>
-                      <span className="choice-number">0{index + 1}</span>
-                      <strong>{item.name}</strong>
-                      <small>{item.specialties}</small>
-                      <span className="choice-action">View availability <b aria-hidden="true">↗</b></span>
-                    </button>
-                  ))}
-                </div>
-                <p className="prototype-note">Placeholder names can be replaced with the real team later.</p>
-              </div>
-            )}
-
-            {step === 3 && need && stylist && (
-              <div className="booking-step">
-                <button className="text-back" type="button" onClick={() => setStep(2)}>← Change stylist</button>
-                <span className="step-kicker">Step 03 · {stylist.name}</span>
+                <span className="step-kicker">Step 02 · {consultationHost}</span>
                 <h2>Choose a time.</h2>
+                <p className="step-lead">Every new client starts with the studio manager for a private, no-pressure conversation.</p>
 
                 <fieldset className="booking-fieldset">
                   <legend>How would you like to start?</legend>
@@ -250,7 +203,7 @@ export default function NewClientBooking() {
                   <fieldset className="booking-fieldset time-fieldset">
                     <legend>Available on {selectedDate.full}</legend>
                     <div className="time-options">
-                      {stylist.times.map((item, index) => (
+                      {consultationTimes.map((item, index) => (
                         <button
                           className={time === item ? "is-selected" : ""}
                           type="button"
@@ -266,16 +219,16 @@ export default function NewClientBooking() {
                   </fieldset>
                 )}
 
-                <button className="portal-primary" type="button" disabled={!canContinue} onClick={() => setStep(4)}>
+                <button className="portal-primary" type="button" disabled={!canContinue} onClick={() => setStep(3)}>
                   Continue to details <span aria-hidden="true">→</span>
                 </button>
               </div>
             )}
 
-            {step === 4 && need && stylist && consultation && selectedDate && (
+            {step === 3 && need && consultation && selectedDate && (
               <form className="booking-step booking-form" onSubmit={submitBooking}>
-                <button className="text-back" type="button" onClick={() => setStep(3)}>← Change time</button>
-                <span className="step-kicker">Step 04</span>
+                <button className="text-back" type="button" onClick={() => setStep(2)}>← Change time</button>
+                <span className="step-kicker">Step 03</span>
                 <h2>Your details.</h2>
                 <p className="step-lead">This information would be used to confirm the consultation and send a private reminder.</p>
 
@@ -305,12 +258,12 @@ export default function NewClientBooking() {
               </form>
             )}
 
-            {step === 5 && need && stylist && consultation && selectedDate && (
+            {step === 4 && need && consultation && selectedDate && (
               <div className="booking-step confirmation-step">
                 <span className="confirmation-mark" aria-hidden="true">✓</span>
                 <span className="step-kicker">Demo complete</span>
                 <h2>Your consultation is held.</h2>
-                <p>{name}, this is what a confirmed first appointment with {stylist.name} could look like.</p>
+                <p>{name}, this is what a confirmed first appointment with the studio manager could look like.</p>
                 <div className="confirmation-details">
                   <span>{consultation.name}</span>
                   <strong>{selectedDate.full} at {time}</strong>
@@ -330,8 +283,8 @@ export default function NewClientBooking() {
               <strong>{need?.name ?? "Not selected"}</strong>
             </div>
             <div className="summary-row">
-              <span>Stylist</span>
-              <strong>{stylist?.name ?? "Not selected"}</strong>
+              <span>Meet with</span>
+              <strong>{consultationHost}</strong>
             </div>
             <div className="summary-row">
               <span>Visit</span>

@@ -33,8 +33,11 @@ test("server-renders the Hair Unlimited homepage and booking links", async () =>
   assert.match(html, /rel="icon"/);
   assert.match(html, /hu-lettermark-gothic-final\.svg/);
   assert.match(html, /class="home-loader"/);
+  assert.match(html, /2025/);
+  assert.match(html, /rock-band-1989-hover\.mp4/);
   assert.match(html, /href="\/book"/);
   assert.match(html, /href="\/clients"/);
+  assert.match(html, /href="\/faq"/);
 });
 
 test("server-renders the new-client consultation flow", async () => {
@@ -47,7 +50,22 @@ test("server-renders the new-client consultation flow", async () => {
   assert.match(html, /What brings you in\?/);
   assert.match(html, /Hair loss is new/);
   assert.match(html, /Explore your options/);
+  assert.match(html, /Studio manager/);
+  assert.doesNotMatch(html, /Stylist/);
   assert.match(html, /No appointment data is saved or sent/);
+});
+
+test("server-renders the FAQ page", async () => {
+  const response = await render("/faq");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Hair System Questions/);
+  assert.match(html, /Ask/);
+  assert.match(html, /What is non-surgical hair replacement\?/);
+  assert.match(html, /Can I shower, work out or swim in it\?/);
+  assert.match(html, /Draft content for studio review/);
+  assert.match(html, /href="\/book"/);
 });
 
 test("server-renders the current-client booking flow", async () => {
