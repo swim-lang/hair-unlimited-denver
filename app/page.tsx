@@ -1,6 +1,7 @@
 import RevealOnScroll from "./reveal-on-scroll";
 import HomeLoader from "./home-loader";
 import Since1989Card from "./since-1989-card";
+import { transformations } from "./results/transformations";
 
 const phoneDisplay = "(303) 868-1977";
 const phoneHref = "tel:+13038681977";
@@ -137,27 +138,22 @@ export default function Home() {
           <h2 className="display results-title">The work<br />speaks for itself.</h2>
           <div>
             <p>Natural hairlines. Precise color. Styles chosen for the person, not the category.</p>
-            <a className="button button-dark" href="#result-gallery">
+            <a className="button button-dark" href="/results">
               <span>View transformations</span>
               <Arrow />
             </a>
           </div>
         </div>
         <div className="result-gallery" id="result-gallery">
-          <figure className="result-card" data-reveal>
-            <img src="/images/crysta-before-after.jpg" alt="Woman before and after a custom hair piece" />
-            <figcaption>
-              <small>Before / after · Custom piece</small>
-              <span>Curl, color and coverage matched to her own hair.</span>
-            </figcaption>
-          </figure>
-          <figure className="result-card" data-reveal>
-            <img src="/images/scott-before-after.jpg" alt="Man before and after a custom hair system" />
-            <figcaption>
-              <small>Before / after · Custom system</small>
-              <span>A natural hairline shaped for the face.</span>
-            </figcaption>
-          </figure>
+          {[transformations[0], transformations[4]].map((item) => (
+            <figure className="result-card" data-reveal key={item.name}>
+              <img src={item.image} alt={`${item.name} before and after custom hair replacement`} />
+              <figcaption>
+                <small>{item.name}, {item.age} · Before / after</small>
+                <span>{item.role} · Custom hair replacement</span>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 

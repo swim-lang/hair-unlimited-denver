@@ -38,6 +38,8 @@ test("server-renders the Hair Unlimited homepage and booking links", async () =>
   assert.match(html, /href="\/book"/);
   assert.match(html, /href="\/clients"/);
   assert.match(html, /href="\/faq"/);
+  assert.match(html, /href="\/results"/);
+  assert.ok(html.indexOf("Jesse") < html.indexOf("Crysta"));
 });
 
 test("server-renders the new-client consultation flow", async () => {
@@ -66,6 +68,19 @@ test("server-renders the FAQ page", async () => {
   assert.match(html, /Can I shower, work out or swim in it\?/);
   assert.match(html, /Draft content for studio review/);
   assert.match(html, /href="\/book"/);
+});
+
+test("server-renders the full transformation portfolio with Jesse first", async () => {
+  const response = await render("/results");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Client Transformations/);
+  assert.match(html, /Eight clients/);
+  assert.match(html, /View Jesse&#x27;s transformation larger/);
+  assert.match(html, /View Roxy&#x27;s transformation larger/);
+  assert.ok(html.indexOf("Jesse") < html.indexOf("Andrew"));
+  assert.match(html, /jesse-before-after\.jpg/);
 });
 
 test("server-renders the current-client booking flow", async () => {
