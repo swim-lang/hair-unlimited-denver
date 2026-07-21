@@ -249,7 +249,7 @@ export default function Home() {
             <div>
               <small>Start here</small>
               <a href={phoneHref}>Book a Private Consult</a>
-              <a href={phoneHref}>Current Clients</a>
+              <a href="/clients">Current Clients</a>
               <a href={phoneHref}>Call / Text</a>
               <a href={directionsHref} target="_blank" rel="noreferrer">Get Directions</a>
             </div>
