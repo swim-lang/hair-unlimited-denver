@@ -48,17 +48,13 @@ export default function Since1989Card() {
 
   return (
     <aside className="since-card" ref={cardRef} tabIndex={0}>
-      <video className="since-card-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-        <source src="/videos/rock-band-1989-hover.mp4" type="video/mp4" />
-      </video>
-      <div className="since-card-scrim" aria-hidden="true" />
+      <img className="since-card-gif" src="/images/rock-band-1989-hover.gif" alt="" aria-hidden="true" />
       <small>Experience / continuity</small>
       <div className="since-card-year">
         <strong>Serving Denver</strong>
         <span>Since<br />{year}.</span>
       </div>
       <p>One studio. Long relationships. A stylist who knows your history.</p>
-      <em>Hover to turn it up</em>
     </aside>
   );
 }

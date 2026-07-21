@@ -34,7 +34,7 @@ test("server-renders the Hair Unlimited homepage and booking links", async () =>
   assert.match(html, /hu-lettermark-gothic-final\.svg/);
   assert.match(html, /class="home-loader"/);
   assert.match(html, /2025/);
-  assert.match(html, /rock-band-1989-hover\.mp4/);
+  assert.match(html, /rock-band-1989-hover\.gif/);
   assert.match(html, /href="\/book"/);
   assert.match(html, /href="\/clients"/);
   assert.match(html, /href="\/faq"/);
