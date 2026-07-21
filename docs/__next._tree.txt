@@ -1,0 +1,6 @@
+:HL["/hair-unlimited-denver/_next/static/chunks/0uw4.362_9ty~.css","style"]
+:HL["/hair-unlimited-denver/hu-lettermark-gothic-final.svg","image"]
+:HL["/hair-unlimited-denver/images/transformations/jesse-before-after.jpg","image"]
+:HL["/hair-unlimited-denver/images/transformations/crysta-before-after.jpg","image"]
+:HL["/hair-unlimited-denver/images/studio-stylist.jpg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"RxdPH_AOHdB6SXgF1P536"}
