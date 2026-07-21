@@ -1,3 +1,5 @@
+import RevealOnScroll from "./reveal-on-scroll";
+
 const phoneDisplay = "(303) 868-1977";
 const phoneHref = "tel:+13038681977";
 const directionsHref =
@@ -19,6 +21,7 @@ function BookingLink({ className = "button button-dark" }: { className?: string 
 export default function Home() {
   return (
     <main>
+      <RevealOnScroll />
       <header className="site-header">
         <a className="header-mark" href="#top" aria-label="Hair Unlimited home">
           Hair Unlimited
@@ -74,7 +77,7 @@ export default function Home() {
           <span>The feeling</span>
           <span>If you&apos;re here, you&apos;ve probably tried to ignore it.</span>
         </div>
-        <div className="feeling-grid">
+        <div className="feeling-grid" data-reveal>
           <h2 className="display feeling-title">
             Thinning.
             <br />
@@ -95,7 +98,7 @@ export default function Home() {
           <span>The approach</span>
           <span>Custom hair · Private care · Denver</span>
         </div>
-        <div className="approach-main">
+        <div className="approach-main" data-reveal>
           <div>
             <h2 className="display approach-title">Custom hair.<br />Precise fit.</h2>
             <p className="approach-copy">Your hairline, color, texture, density, cut and routine are considered together. The result should feel like you, not a product.</p>
@@ -110,15 +113,15 @@ export default function Home() {
           </aside>
         </div>
         <div className="benefits">
-          <article>
+          <article data-reveal>
             <h3>Made to match you.</h3>
             <p>Color, texture, density and hairline are matched with a trained eye.</p>
           </article>
-          <article>
+          <article data-reveal>
             <h3>Made to disappear.</h3>
             <p>A precise fit, custom cut and natural blend, all handled privately.</p>
           </article>
-          <article>
+          <article data-reveal>
             <h3>Made for real life.</h3>
             <p>A clear care plan and ongoing appointments that fit your routine.</p>
           </article>
@@ -130,7 +133,7 @@ export default function Home() {
           <span>Real results</span>
           <span>Real clients · Honest color · No stock photos</span>
         </div>
-        <div className="results-intro">
+        <div className="results-intro" data-reveal>
           <h2 className="display results-title">The work<br />speaks for itself.</h2>
           <div>
             <p>Natural hairlines. Precise color. Styles chosen for the person, not the category.</p>
@@ -141,14 +144,14 @@ export default function Home() {
           </div>
         </div>
         <div className="result-gallery" id="result-gallery">
-          <figure className="result-card">
+          <figure className="result-card" data-reveal>
             <img src="/images/crysta-before-after.jpg" alt="Woman before and after a custom hair piece" />
             <figcaption>
               <small>Before / after · Custom piece</small>
               <span>Curl, color and coverage matched to her own hair.</span>
             </figcaption>
           </figure>
-          <figure className="result-card">
+          <figure className="result-card" data-reveal>
             <img src="/images/scott-before-after.jpg" alt="Man before and after a custom hair system" />
             <figcaption>
               <small>Before / after · Custom system</small>
@@ -164,13 +167,12 @@ export default function Home() {
             <span>How it works</span>
             <span>Private from day one</span>
           </div>
-          <div className="process-copy">
+          <div className="process-copy" data-reveal>
             <h2 className="display process-title">Old-school<br />care.<br />None of the<br />friction.</h2>
             <p>A real person who knows your hair, plus online booking, clear reminders and a straightforward plan for what comes next.</p>
           </div>
-          <BookingLink className="button process-button" />
         </div>
-        <div className="steps">
+        <div className="steps" data-reveal>
           <div className="steps-header">
             <h2>From first call to full fit.</h2>
             <span>4 steps</span>
@@ -201,7 +203,7 @@ export default function Home() {
           <span>The studio</span>
           <span>Independent · Experienced · Denver</span>
         </div>
-        <div className="studio-main">
+        <div className="studio-main" data-reveal>
           <h2 className="display studio-title">Private<br />by default.</h2>
           <div className="studio-copy">
             <p>No crowded clinic. No rotating cast. Start with a private, no-pressure consultation and stay with people who know your hair.</p>
@@ -211,14 +213,14 @@ export default function Home() {
             </blockquote>
           </div>
         </div>
-        <div className="studio-details">
+        <div className="studio-details" data-reveal>
           <div><small>Visit / Hampden</small><address>7535 E. Hampden Ave.<br />Building 2, Suite 502</address></div>
           <div><small>Call / text</small><a href={phoneHref}>{phoneDisplay}</a></div>
           <div><a className="button button-dark" href={directionsHref} target="_blank" rel="noreferrer"><span>Meet the studio</span><Arrow /></a></div>
         </div>
       </section>
 
-      <section className="final-cta">
+      <section className="final-cta" data-reveal>
         <div>
           <small>Free private consultation · No pressure</small>
           <h2 className="display">Ready when you are.</h2>
@@ -227,7 +229,7 @@ export default function Home() {
       </section>
 
       <footer className="site-footer">
-        <div className="footer-top">
+        <div className="footer-top" data-reveal>
           <div className="footer-about">
             <h2>Denver · Since 1989</h2>
             <p>Private, custom non-surgical hair replacement in Denver since 1989.</p>
@@ -254,7 +256,7 @@ export default function Home() {
             </div>
           </nav>
         </div>
-        <div className="footer-wordmark display">Hair Unlimited</div>
+        <div className="footer-wordmark display" data-reveal>Hair Unlimited</div>
         <div className="footer-legal">
           <span>© 2026 Hair Unlimited of Denver · Privacy · Accessibility</span>
           <a href={phoneHref}>Call or text {phoneDisplay}</a>
