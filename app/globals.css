@@ -88,10 +88,10 @@ ol {
 .header-mark {
   color: var(--ink);
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 900;
   letter-spacing: -0.018em;
-  line-height: 24px;
+  line-height: 32px;
   text-transform: uppercase;
 }
 
@@ -1007,12 +1007,12 @@ ol {
   }
 
   .header-mark {
-    font-size: 19px;
-    line-height: 20px;
+    font-size: 24px;
+    line-height: 24px;
   }
 
   .header-lockup {
-    gap: 8px;
+    gap: 6px;
   }
 
   .header-monogram {
@@ -1324,7 +1324,7 @@ ol {
 
 @media (max-width: 420px) {
   .header-book {
-    max-width: 155px;
+    max-width: 145px;
     text-align: center;
   }
 
