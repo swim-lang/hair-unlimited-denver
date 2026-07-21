@@ -1,6 +1,7 @@
 import RevealOnScroll from "./reveal-on-scroll";
 import HomeLoader from "./home-loader";
 import Since1989Card from "./since-1989-card";
+import SiteMenu from "./site-menu";
 import { transformations } from "./results/transformations";
 
 const phoneDisplay = "(303) 868-1977";
@@ -31,19 +32,15 @@ export default function Home() {
           <img className="header-monogram" src="/hu-lettermark-gothic-final.svg" alt="" aria-hidden="true" />
           <span className="header-mark">Hair Unlimited</span>
         </a>
-        <nav className="desktop-nav" aria-label="Primary navigation">
-          <a href="#hair-systems">Hair systems</a>
-          <a href="#results">Results</a>
-          <a href="#studio">The studio</a>
-          <a href={phoneHref}>Call / text</a>
-        </nav>
-        <BookingLink className="header-book" />
+        <div className="site-header-actions">
+          <BookingLink className="header-book" />
+          <SiteMenu />
+        </div>
       </header>
 
       <section className="hero" id="top">
         <div className="hero-copy">
           <div className="eyebrow-with-rule">
-            <span className="short-rule" />
             <span>Private hair replacement · Denver since 1989</span>
           </div>
 
@@ -130,10 +127,6 @@ export default function Home() {
       </section>
 
       <section className="results" id="results">
-        <div className="section-kicker">
-          <span>Real results</span>
-          <span>Real clients · Honest color · No stock photos</span>
-        </div>
         <div className="results-intro" data-reveal>
           <h2 className="display results-title">The work<br />speaks for itself.</h2>
           <div>
@@ -195,12 +188,11 @@ export default function Home() {
       </section>
 
       <section className="studio" id="studio">
-        <div className="section-kicker">
-          <span>The studio</span>
-          <span>Independent · Experienced · Denver</span>
-        </div>
         <div className="studio-main" data-reveal>
           <h2 className="display studio-title">Private<br />by default.</h2>
+          <figure className="studio-photo">
+            <img src="/images/studio-stylist.jpg" alt="Stylist finishing a client's hair in a private studio" />
+          </figure>
           <div className="studio-copy">
             <p>No crowded clinic. No rotating cast. Start with a private, no-pressure consultation and stay with people who know your hair.</p>
             <blockquote>

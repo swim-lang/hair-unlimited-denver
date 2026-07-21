@@ -39,6 +39,11 @@ test("server-renders the Hair Unlimited homepage and booking links", async () =>
   assert.match(html, /href="\/clients"/);
   assert.match(html, /href="\/faq"/);
   assert.match(html, /href="\/results"/);
+  assert.match(html, /aria-label="Open site menu"/);
+  assert.match(html, /studio-stylist\.jpg/);
+  assert.doesNotMatch(html, /short-rule/);
+  assert.doesNotMatch(html, /Real clients · Honest color · No stock photos/);
+  assert.doesNotMatch(html, /Independent · Experienced · Denver/);
   assert.ok(html.indexOf("Jesse") < html.indexOf("Crysta"));
 });
 

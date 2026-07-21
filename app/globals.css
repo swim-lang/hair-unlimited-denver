@@ -253,6 +253,218 @@ ol {
   display: none;
 }
 
+.site-header-actions {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.site-menu-toggle {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  gap: 10px;
+  height: 42px;
+  justify-content: center;
+  letter-spacing: 0.12em;
+  padding: 0 14px;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.site-menu-toggle:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.site-menu-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 18px;
+}
+
+.site-menu-bars i {
+  background: currentColor;
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+
+.site-menu-layer {
+  animation: site-menu-fade 220ms ease both;
+  background: rgba(9, 9, 9, 0.42);
+  inset: 0;
+  position: fixed;
+  z-index: 10000;
+}
+
+.site-menu-drawer {
+  animation: site-menu-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  margin-left: auto;
+  overflow-y: auto;
+  padding: 0 34px 28px;
+  width: min(520px, 100%);
+}
+
+.site-menu-top {
+  align-items: center;
+  border-bottom: 1px solid #42423f;
+  display: flex;
+  flex: 0 0 88px;
+  justify-content: space-between;
+}
+
+.site-menu-top > span {
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+}
+
+.site-menu-top button {
+  background: transparent;
+  border: 0;
+  color: var(--paper);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 12px 0 12px 12px;
+  text-transform: uppercase;
+}
+
+.site-menu-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 0 22px;
+}
+
+.site-menu-nav a {
+  align-items: center;
+  border-bottom: 1px solid #2e2e2b;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 28px minmax(0, 1fr) 22px;
+  min-height: 68px;
+}
+
+.site-menu-nav small,
+.site-menu-actions small,
+.site-menu-bottom {
+  color: #a9a9a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.site-menu-nav a > span {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.site-menu-nav b {
+  font-size: 18px;
+  font-weight: 400;
+  transition: transform 180ms ease;
+}
+
+.site-menu-nav a:hover b {
+  transform: translate(3px, -3px);
+}
+
+.site-menu-actions {
+  border-top: 1px solid #42423f;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+.site-menu-primary {
+  align-items: center;
+  background: var(--paper);
+  color: var(--ink);
+  display: flex;
+  font-size: 11px;
+  font-weight: 700;
+  height: 54px;
+  justify-content: space-between;
+  letter-spacing: 0.11em;
+  padding: 0 16px;
+  text-transform: uppercase;
+}
+
+.site-menu-actions > div {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px 0 22px;
+}
+
+.site-menu-actions > div a {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.site-menu-actions strong {
+  font-size: 15px;
+  letter-spacing: -0.015em;
+}
+
+.site-menu-bottom {
+  align-items: center;
+  border-top: 1px solid #42423f;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.site-menu-bottom a {
+  color: var(--paper);
+}
+
+.site-menu-toggle:focus-visible,
+.site-menu-drawer a:focus-visible,
+.site-menu-drawer button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@keyframes site-menu-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes site-menu-enter {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-menu-layer,
+  .site-menu-drawer {
+    animation: none;
+  }
+}
+
 .hero {
   display: flex;
   min-height: 812px;
@@ -271,12 +483,6 @@ ol {
   align-items: center;
   display: flex;
   gap: 14px;
-}
-
-.short-rule {
-  background: var(--ink);
-  height: 8px;
-  width: 34px;
 }
 
 .hero-title {
@@ -835,16 +1041,16 @@ ol {
 }
 
 .studio {
-  height: 780px;
+  height: 900px;
 }
 
 .studio-main {
   align-items: center;
   border-bottom: 1px solid var(--ink);
-  display: flex;
-  gap: 70px;
-  height: 500px;
-  justify-content: space-between;
+  display: grid;
+  gap: 38px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(230px, 0.68fr) minmax(320px, 0.9fr);
+  height: 630px;
 }
 
 .studio-title {
@@ -854,9 +1060,31 @@ ol {
 
 .studio-copy {
   display: flex;
-  flex: 0 0 420px;
   flex-direction: column;
   gap: 34px;
+  min-width: 0;
+}
+
+.studio-photo {
+  height: 450px;
+  overflow: hidden;
+  position: relative;
+}
+
+.studio-photo::after {
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  content: "";
+  inset: 12px;
+  pointer-events: none;
+  position: absolute;
+}
+
+.studio-photo img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 44%;
+  width: 100%;
 }
 
 .studio-copy > p {
@@ -2450,6 +2678,63 @@ ol {
     padding: 0 20px;
   }
 
+  .site-header-actions {
+    gap: 0;
+  }
+
+  .site-header-actions .header-book {
+    display: none;
+  }
+
+  .site-menu-toggle {
+    height: 38px;
+    padding: 0;
+    width: 42px;
+  }
+
+  .site-menu-toggle > span:last-child {
+    display: none;
+  }
+
+  .site-menu-drawer {
+    padding: 0 20px 22px;
+    width: 100%;
+  }
+
+  .site-menu-top {
+    flex-basis: 76px;
+  }
+
+  .site-menu-top > span {
+    font-size: 24px;
+  }
+
+  .site-menu-nav {
+    padding: 12px 0 18px;
+  }
+
+  .site-menu-nav a {
+    min-height: 62px;
+  }
+
+  .site-menu-nav a > span {
+    font-size: 32px;
+  }
+
+  .site-menu-actions > div {
+    gap: 12px;
+  }
+
+  .site-menu-actions strong {
+    font-size: 13px;
+  }
+
+  .site-menu-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .header-mark {
     font-size: 24px;
     line-height: 24px;
@@ -2666,10 +2951,11 @@ ol {
 
   .studio-main {
     align-items: stretch;
+    display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 38px;
     height: auto;
-    padding: 64px 0 48px;
+    padding: 50px 0 48px;
   }
 
   .studio-title {
@@ -2678,6 +2964,11 @@ ol {
 
   .studio-copy {
     flex-basis: auto;
+  }
+
+  .studio-photo {
+    height: min(128vw, 560px);
+    width: 100%;
   }
 
   .studio-details {
