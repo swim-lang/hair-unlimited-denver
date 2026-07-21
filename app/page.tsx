@@ -11,7 +11,7 @@ function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 
 function BookingLink({ className = "button button-dark" }: { className?: string }) {
   return (
-    <a className={className} href={phoneHref}>
+    <a className={className} href="/book">
       <span>Book a private consult</span>
       <Arrow diagonal />
     </a>
@@ -248,7 +248,7 @@ export default function Home() {
             </div>
             <div>
               <small>Start here</small>
-              <a href={phoneHref}>Book a Private Consult</a>
+              <a href="/book">Book a Private Consult</a>
               <a href="/clients">Current Clients</a>
               <a href={phoneHref}>Call / Text</a>
               <a href={directionsHref} target="_blank" rel="noreferrer">Get Directions</a>

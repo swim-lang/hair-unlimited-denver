@@ -1050,6 +1050,10 @@ ol {
   padding-bottom: 22px;
 }
 
+.booking-progress-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .booking-progress > div {
   color: #8b8b87;
   display: flex;
@@ -1112,6 +1116,25 @@ ol {
   gap: 16px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 34px;
+}
+
+.choice-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.choice-grid-three .stylist-choice {
+  min-height: 260px;
+}
+
+.choice-grid-three .stylist-choice > strong {
+  font-size: 30px;
+  line-height: 34px;
+  margin-top: 34px;
+}
+
+.need-choice small {
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .stylist-choice {
@@ -1223,6 +1246,10 @@ ol {
 
 .visit-options {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.consult-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .date-options {
@@ -1348,6 +1375,11 @@ ol {
   flex-direction: column;
   min-height: 650px;
   padding: 30px;
+}
+
+.new-booking-card,
+.new-client-summary {
+  min-height: 720px;
 }
 
 .summary-label {
@@ -1503,6 +1535,14 @@ ol {
   .date-options {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .choice-grid-three {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-grid-three .stylist-choice {
+    min-height: 210px;
+  }
 }
 
 @media (max-width: 820px) {
@@ -1554,6 +1594,15 @@ ol {
   .booking-progress strong {
     font-size: 11px;
     line-height: 15px;
+  }
+
+  .booking-progress-four > div + div {
+    padding-left: 8px;
+  }
+
+  .booking-progress-four strong {
+    font-size: 9px;
+    line-height: 12px;
   }
 
   .booking-step h2 {
